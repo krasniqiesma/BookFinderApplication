@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     return { shortTitle, shortDescription };
   }
   
-  navigateToDetail(bookId: string): void {
+  navigateToDetail(bookId: number): void {
     this.router.navigate(['./book-details', bookId]);
   }
 }
