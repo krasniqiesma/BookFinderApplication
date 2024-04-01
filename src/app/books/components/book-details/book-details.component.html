@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <img [src]="book?.imageLinks?.thumbnail || 'https://via.placeholder.com/150'" class="card-img-top img-fluid" alt="Book Cover">
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">{{ book?.title }}</h2>
+            <h4 class="card-subtitle mb-3 text-muted">Author(s): {{ book?.authors?.join(', ') }}</h4>
+            <p class="card-text">Published Date: {{ book?.publishedDate }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ book?.description }}</p>
+            <button class="btn btn-dark" (click)="goBack()">Go Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
