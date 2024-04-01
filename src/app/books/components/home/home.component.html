@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6" *ngFor="let book of booksList">
+        <div class="card mt-5" style="width: 100%;">
+          <img [src]="book.volumeInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/150'" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ shortDescription(book.volumeInfo.title, book.volumeInfo.description).shortTitle }}</h5>
+            <p class="card-text">{{ shortDescription(book.volumeInfo.title, book.volumeInfo.description).shortDescription }}</p>
+            <a *ngIf="book.volumeInfo.previewLink" [href]="book.volumeInfo.previewLink" class="btn btn-primary">Read More</a>
+            <a *ngIf="!book.volumeInfo.previewLink"  [routerLink]="['/books/book-details', book.id]" class="btn btn-dark">More Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
